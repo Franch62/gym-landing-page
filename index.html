@@ -23,6 +23,9 @@
         <i class="fas fa-dumbbell logo-icon"></i>
         <h1>Elite Gym</h1>
       </div>
+      <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu">
+        <i class="fas fa-bars"></i>
+      </button>
       <nav>
         <ul class="nav-links">
           <li><a href="#">Início</a></li>
@@ -32,7 +35,11 @@
           <li><a href="#">Contato</a></li>
         </ul>
       </nav>
-      <a href="#" class="cta-button"
+      <a
+        href="#contato"
+        id="cta-button"
+        class="cta-button"
+        onclick="document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })"
         ><i class="fas fa-rocket"></i> Comece Agora</a
       >
     </header>
@@ -321,6 +328,14 @@
           icon.classList.remove("open");
         }
       }
+
+      const hamburgerBtn = document.getElementById("hamburger-btn");
+      const navLinks = document.querySelector(".nav-links");
+
+      hamburgerBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        hamburgerBtn.classList.toggle("active");
+      });
     </script>
   </body>
 </html>

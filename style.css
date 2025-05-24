@@ -780,7 +780,7 @@ footer p {
     justify-content: center;
   }
   .nav-links-mobile.active {
-    transform: translateX(70%);
+    transform: translateX(50%);
   }
   .hamburger {
     display: block;

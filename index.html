@@ -23,25 +23,105 @@
         <i class="fas fa-dumbbell logo-icon"></i>
         <h1>Elite Gym</h1>
       </div>
+      <nav class="nav-mobile">
+        <ul class="nav-links-mobile">
+          <li>
+            <a
+              href="#"
+              onclick="document.getElementById('hero').scrollIntoView({ behavior: 'smooth' })"
+              >Início</a
+            >
+          </li>
+          <li>
+            <a
+              href="#servicos"
+              onclick="document.getElementById('servicos').scrollIntoView({ behavior: 'smooth' })"
+              >Serviços</a
+            >
+          </li>
+          <li>
+            <a
+              href="#features"
+              onclick="document.getElementById('features').scrollIntoView({ behavior: 'smooth' })"
+              >Diferenciais</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="document.getElementById('faq').scrollIntoView({ behavior: 'smooth' })"
+              >FAQ</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })"
+              >Contato</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contato"
+              id="cta-button"
+              class="cta-button"
+              onclick="document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })"
+              ><i class="fas fa-rocket"></i> Comece Agora</a
+            >
+          </li>
+        </ul>
+      </nav>
       <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu">
         <i class="fas fa-bars"></i>
       </button>
-      <nav>
+      <nav class="nav">
         <ul class="nav-links">
-          <li><a href="#">Início</a></li>
-          <li><a href="#">Serviços</a></li>
-          <li><a href="#">Diferenciais</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Contato</a></li>
+          <li>
+            <a
+              href="#"
+              onclick="document.getElementById('hero').scrollIntoView({ behavior: 'smooth' })"
+              >Início</a
+            >
+          </li>
+          <li>
+            <a
+              href="#servicos"
+              onclick="document.getElementById('servicos').scrollIntoView({ behavior: 'smooth' })"
+              >Serviços</a
+            >
+          </li>
+          <li>
+            <a
+              href="#features"
+              onclick="document.getElementById('features').scrollIntoView({ behavior: 'smooth' })"
+              >Diferenciais</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="document.getElementById('faq').scrollIntoView({ behavior: 'smooth' })"
+              >FAQ</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })"
+              >Contato</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contato"
+              id="cta-button"
+              class="cta-button"
+              onclick="document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })"
+              ><i class="fas fa-rocket"></i> Comece Agora</a
+            >
+          </li>
         </ul>
       </nav>
-      <a
-        href="#contato"
-        id="cta-button"
-        class="cta-button"
-        onclick="document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })"
-        ><i class="fas fa-rocket"></i> Comece Agora</a
-      >
     </header>
 
     <section id="hero">
@@ -330,11 +410,19 @@
       }
 
       const hamburgerBtn = document.getElementById("hamburger-btn");
-      const navLinks = document.querySelector(".nav-links");
+      const navLinks = document.querySelector(".nav-links-mobile");
 
       hamburgerBtn.addEventListener("click", () => {
         navLinks.classList.toggle("active");
         hamburgerBtn.classList.toggle("active");
+      });
+
+      // Fecha o menu ao clicar em um link (opcional)
+      document.querySelectorAll(".nav-links-mobile a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          hamburgerBtn.classList.remove("active");
+        });
       });
     </script>
   </body>
